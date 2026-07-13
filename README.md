@@ -22,3 +22,7 @@ An autonomous, self-navigating maze-solving robot designed to map, compute, and 
 To minimize structural footprint and eliminate complex wiring failure points, a custom multi-layer PCB was fabricated.
 - Power Management: Dedicated onboard regulation filtering out 12V motor noise from the sensitive 3.3V STM32 logic lines.
 - Sensor Alignment: Precise angled placement for the VL53L0X ToF sensors to map front and side clearances accurately.
+
+
+
+![MicroMouse Robot](Images/Micromouse_bot.jpeg)
