@@ -25,4 +25,12 @@ To minimize structural footprint and eliminate complex wiring failure points, a 
 
 
 
-![MicroMouse Robot](Images/Micromouse_bot.jpeg)
+![MicroMouse Robot](Images/Micromouse_bot.jpeg)  
+
+## Maze Description
+The robot was tested and validated in a physical maze environment configured with the following specifications:
+- Dimensions and Grid: A modular grid layout featuring distinct pathways, vertical wall dividers, and an enclosed central target zone.
+- Physical Construction: Built using white foam board panels for the structural walls and a gridded base layer featuring blue alignment markings to delineate cell thresholds.
+- Core Objective: The robot starts from the outer perimeter and relies on real-time sensory feedback to dynamically map cell paths, track orientation changes, and navigate toward the centralized goal area.
+
+- ![Maze Grid](Images/Maze.jpeg)
