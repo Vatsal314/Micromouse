@@ -1,6 +1,8 @@
 # MicroMouse: Autonomous Maze-Solving Robot
 
-An autonomous, self-navigating maze-solving robot designed to map, compute, and solve a grid using the Flood Fill algorithm. The system features a custom-designed PCB to streamline power and sensing, coupled with real-time sensor feedback over standard serial protocols.
+An autonomous, self-navigating maze-solving robot designed to map, compute, and solve a grid using the Flood Fill algorithm. The system features a custom-designed PCB to streamline power and sensing, coupled with real-time sensor feedback over standard serial protocols.  
+
+<img src="Images/Micromouse_bot.jpeg" width="450">
 
 ## Tech Stack & Hardware Components
 - Microcontroller: STM32F411CEU6 "Black Pill" (ARM Cortex-M4)
@@ -25,7 +27,7 @@ To minimize structural footprint and eliminate complex wiring failure points, a 
 
 
 
-![MicroMouse Robot](Images/Micromouse_bot.jpeg)  
+
 
 ## Maze Description
 The robot was tested and validated in a physical maze environment configured with the following specifications:
@@ -33,7 +35,7 @@ The robot was tested and validated in a physical maze environment configured wit
 - Physical Construction: Built using white foam board panels for the structural walls and a gridded base layer featuring blue alignment markings to delineate cell thresholds.
 - Core Objective: The robot starts from the outer perimeter and relies on real-time sensory feedback to dynamically map cell paths, track orientation changes, and navigate toward the centralized goal area.
 
-- ![Maze Grid](Images/Maze.jpeg)
+- <img src="Images/Maze.jpeg" width="350">
 
 
 ## Algorithm & Firmware Implementation
@@ -59,3 +61,14 @@ The robot utilizes a dynamic Flood Fill algorithm optimized for real-time maze-m
 ### 5. Acceleration-Optimized Final Run (`final_run`)
 - After mapping out the optimal trajectory, the system executes a localized final straightaway acceleration routine via `final_run`. 
 - Instead of stopping at every single node intersection, the algorithm aggregates sequential straight moves (`steps++`). If sequential cells follow a uniform direction, it executes long-distance acceleration (`moveForward(steps * steplength * 0.9)`) coupled with tuned PD constants (`KP_WALL`, `KD_WALL`, `KP_YAW`), leveraging the N20 encoders for high-speed transit.
+
+
+## Hardware Design & PCB Layout
+
+### Schematic Capture
+<img src="Images/schematic.png" width="650">
+
+### PCB Layout & Routing
+<img src="Images/pcb_design.png" width="650">
+
+> **Note on Hardware Evolution:** This custom multi-layer PCB was originally architected and routed around a Teensy 4.1 MCU footprint. The subsequent physical implementation and final firmware integration were ported to the STM32F411CEU6 "Black Pill" microcontroller to align with specific processing, layout, and peripheral subsystem constraints.
